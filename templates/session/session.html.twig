@@ -1,0 +1,8 @@
+{# templates/session/session.html.twig #}
+<h1><a href="{{ path('session_detail', {id: session.id}) }}">{{ session.title }}</a></h1>
+<div>
+    {{ session.author }},
+    <time datetime="{{ session.datetime|date('c') }}">{{ session.datetime|date }}</time>
+</div>
+
+<p>{{ session.summary }}</p>

@@ -1,0 +1,12 @@
+{# templates/session/detail.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block title %}session.title | SymfonyCon{% endblock %}
+
+{% block body %}
+    <main>
+    {% include 'session/session.html.twig' with {session: session} %}
+    </main>
+
+    <a href="{{ path('session_index') }}">Back to the list</a>
+{% endblock %}
