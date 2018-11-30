@@ -11,9 +11,9 @@
 
         <p v-if="sent">Thanks for rating this talk!</p>
         <form v-else @submit.prevent="onSubmit">
-            <input v-model="author" placeholder="Author">
-            <star-rating v-model="rating" :star-size="20"></star-rating>
-            <textarea v-model="comment" placeholder="This talk was..."></textarea>
+            <input v-model="author" name="author" placeholder="Author">
+            <star-rating v-model="rating" id="rating" :star-size="20"></star-rating>
+            <textarea v-model="comment" name="comment" placeholder="This talk was..."></textarea>
 
             <input type="submit" :disabled="!author || !rating || !comment">
         </form>
