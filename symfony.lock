@@ -1,4 +1,16 @@
 {
+    "api-platform/api-pack": {
+        "version": "1.1.0"
+    },
+    "api-platform/core": {
+        "version": "2.1",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "2.1",
+            "ref": "18727d8f229306860b46955f438e1897421da689"
+        }
+    },
     "doctrine/annotations": {
         "version": "1.0",
         "recipe": {
@@ -114,6 +126,15 @@
             "branch": "master",
             "version": "3.2",
             "ref": "aaf440eb4d289ead8e2ef986c4f25c97fffec4ac"
+        }
+    },
+    "nelmio/cors-bundle": {
+        "version": "1.5",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "1.5",
+            "ref": "f0436fc35fca88eada758311f8de43bfb61f1980"
         }
     },
     "nikic/php-parser": {
@@ -425,6 +446,15 @@
             "ref": "dae9b39fd6717970be7601101ce5aa960bf53d9a"
         }
     },
+    "symfony/webpack-encore-bundle": {
+        "version": "1.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "1.0",
+            "ref": "dd76e869a5d10fac29f4c0c02f8feaac613471ff"
+        }
+    },
     "symfony/yaml": {
         "version": "v4.1.8"
     },
@@ -442,6 +472,9 @@
     },
     "webmozart/assert": {
         "version": "1.3.0"
+    },
+    "willdurand/negotiation": {
+        "version": "v2.3.1"
     },
     "zendframework/zend-code": {
         "version": "3.3.1"

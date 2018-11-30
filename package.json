@@ -1,0 +1,20 @@
+{
+    "devDependencies": {
+        "@symfony/webpack-encore": "^0.22.0",
+        "vue": "^2.5.17",
+        "vue-loader": "^15.0.11",
+        "vue-template-compiler": "^2.5.17",
+        "webpack-notifier": "^1.6.0"
+    },
+    "license": "UNLICENSED",
+    "private": true,
+    "scripts": {
+        "dev-server": "encore dev-server",
+        "dev": "encore dev",
+        "watch": "encore dev --watch",
+        "build": "encore production --progress"
+    },
+    "dependencies": {
+        "vue-star-rating": "^1.6.1"
+    }
+}

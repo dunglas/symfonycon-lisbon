@@ -1,12 +1,20 @@
 {# templates/session/detail.html.twig #}
 {% extends 'base.html.twig' %}
 
-{% block title %}session.title | SymfonyCon{% endblock %}
+{% block title %}{{ session.title }} | SymfonyCon{% endblock %}
 
 {% block body %}
     <main>
     {% include 'session/session.html.twig' with {session: session} %}
     </main>
 
+    <section id="feedback">
+        <feedback session-id="{{ session.id }}"></feedback>
+    </section>
+
     <a href="{{ path('session_index') }}">Back to the list</a>
+{% endblock %}
+
+{% block javascripts %}
+    {{ encore_entry_script_tags('js/feedback') }}
 {% endblock %}
