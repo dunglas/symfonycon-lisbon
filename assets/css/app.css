@@ -168,7 +168,7 @@
 }
 
 .animated {
-    animation: up 2s ease-in-out;
+    animation: up 1.5s ease-in;
     pointer-events: none;
 }
 
@@ -180,6 +180,6 @@
 	100% {
 		opacity: 0;
         top: 0;
-        transform: scale(20) rotate(0deg);
+        transform: scale(10) rotate(0deg);
 	}
 }

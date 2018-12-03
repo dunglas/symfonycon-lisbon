@@ -32,10 +32,11 @@
         tear: "#67d3bb"
     };
     const randomIntFromInterval = (min, max) => Math.floor(Math.random()*(max-min+1)+min);
+    const ANIMATIONS_LIMIT = 10;
     export default {
         props: {sessionId: {type: String, required: true}},
         data() {
-            return {star: 0, love: 0, tear: 0};
+            return {star: 0, love: 0, tear: 0, animations: 0};
         },
         created() {
             fetch(`/api/sessions/${this.sessionId}/reactions`)
@@ -67,17 +68,19 @@
                     .then(({ok, statusText}) => {if (!ok) alert(statusText);});
             },
             addReactionAnimation(type) {
+                if (this.animations >= ANIMATIONS_LIMIT) return;
                 const base = document.getElementById(type);
                 const cln = base.cloneNode(true);
+                const left = randomIntFromInterval(40, 60);
+                const rotate = randomIntFromInterval(-50, 50);
                 cln.style.position = 'fixed';
                 cln.style.color = colors[type];
-                const left = randomIntFromInterval(40, 60);
-                const rotate = randomIntFromInterval(-30, 30);
                 cln.style.transform = `rotate(${rotate}deg)`;
                 cln.style.left = left+"%";
-                cln.classList.add("animated");
+                cln.classList.add('animated');
                 document.body.appendChild(cln);
-                setTimeout(() => cln.remove(), 2000);
+                this.animations++;
+                const timeOut = setTimeout(() => {cln.remove(); this.animations--}, 1500);
             },
         }
     }
