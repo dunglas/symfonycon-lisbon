@@ -4,10 +4,14 @@
 {% block title %}SymfonyCon{% endblock %}
 
 {% block body %}
-    <h1>SymfonyCon Schedule</h1>
-    {% for session in sessions %}
-        <article id="session-{{ session.id }}">
-            {% include 'session/session.html.twig' with {session: session} %}
-        </article>
-    {% endfor %}
+    {% include 'session/title.html.twig' with {title: 'Schedule'} %}
+    <section class="section">
+        <main class="container">
+            {% for session in sessions %}
+                <article class="session-item is-bordered" id="session-{{ session.id }}">
+                    {% include 'session/session.html.twig' with {session: session} %}
+                </article>
+            {% endfor %}
+        </main>
+    </section>
 {% endblock %}

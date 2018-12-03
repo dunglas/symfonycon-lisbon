@@ -4,17 +4,44 @@
 {% block title %}{{ session.title }} | SymfonyCon{% endblock %}
 
 {% block body %}
-    <main>
-    {% include 'session/session.html.twig' with {session: session} %}
-    </main>
-
-    <section id="feedback">
-        <feedback session-id="{{ session.id }}"></feedback>
+    {% include 'session/title.html.twig' with {title: 'Detail'} %}
+    <section class="section">
+        <div class="container">
+                <a class="button is-small" href="{{ path('session_index') }}">
+                <span class="icon">
+                    <i class="fas fa-chevron-left"></i>
+                </span>
+                <span>Back to the list</span>
+            </a>
+            <article class="columns detail is-bordered">
+                <div class="column is-three-quarters">
+                    <div class="columns">
+                        <div class="column is-narrow">
+                            <div class="message calendar">
+                                <p class="day-name">{{ session.datetime|date('l') }}</p>
+                                <p class="title is-4 hour">{{ session.datetime|date('H:m') }}</p>
+                                <p class="subtitle is-6 day">{{ session.datetime|date('d M') }}</p>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <h5 class="heading">{{ session.author }}</h5>
+                            <h1 class="title is-3 primary">{{ session.title }}</h1>
+                            <p>{{ session.summary}}</p>
+                        </div>
+                    </div>
+                </div>
+                <article id="reactions" class="column reactions-wrapper">
+                    <reactions session-id="{{ session.id }}"></reactions>
+                </article>
+            </article>
+            <article id="feedback">
+                <feedback session-id="{{ session.id }}"></feedback>
+            </article>
+        </div>
     </section>
-
-    <a href="{{ path('session_index') }}">Back to the list</a>
 {% endblock %}
 
 {% block javascripts %}
     {{ encore_entry_script_tags('js/feedback') }}
+    {{ encore_entry_script_tags('js/reactions') }}
 {% endblock %}

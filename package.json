@@ -15,6 +15,7 @@
         "build": "encore production --progress"
     },
     "dependencies": {
+        "bulma": "^0.7.2",
         "vue-star-rating": "^1.6.1"
     }
 }
