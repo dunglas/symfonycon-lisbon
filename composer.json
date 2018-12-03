@@ -14,6 +14,7 @@
         "symfony/flex": "^1.1",
         "symfony/form": "4.2.*",
         "symfony/framework-bundle": "4.2.*",
+        "symfony/mercure-bundle": "^0.1.0",
         "symfony/monolog-bundle": "^3.1",
         "symfony/orm-pack": "*",
         "symfony/process": "4.2.*",
@@ -34,7 +35,9 @@
         "symfony/profiler-pack": "*",
         "symfony/test-pack": "*",
         "symfony/web-server-bundle": "4.2.*",
-        "symfony/debug": "4.2.*"
+        "symfony/debug": "4.2.x-dev",
+        "symfony/panther": "dev-master",
+        "api-platform/core": "dev-master"
     },
     "config": {
         "preferred-install": {

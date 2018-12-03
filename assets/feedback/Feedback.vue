@@ -1,36 +1,43 @@
 <!-- assets/feedback/Feedback.vue -->
 <template>
     <div>
-        <ul v-if="feedback.length">
+        <reactions :session-id="sessionId"></reactions>
+        <ul v-if="feedback.length" id="comments">
             <li v-for="f in feedback" :key="f['@id']">
+                {{ f.author }}
                 <star-rating :rating="f.rating" :read-only="true" :star-size="20"></star-rating>
                 {{ f.comment }}
             </li>
         </ul>
-        <p v-else>No feedback yet 🙁!</p>
+        <p v-else id="no-comments">No feedback yet 🙁!</p>
 
         <p v-if="sent">Thanks for rating this talk!</p>
         <form v-else @submit.prevent="onSubmit">
             <input v-model="author" name="author" placeholder="Author">
-            <star-rating v-model="rating" id="rating" :star-size="20"></star-rating>
+            <star-rating v-model="rating" :star-size="20"></star-rating>
             <textarea v-model="comment" name="comment" placeholder="This talk was..."></textarea>
 
-            <input type="submit" :disabled="!author || !rating || !comment">
+            <input :disabled="!author || !rating || !comment" type="submit" value="Post">
         </form>
     </div>
 </template>
 
 <script>
-    import StarRating from 'vue-star-rating';
-
+    import Reactions from "./Reactions";
     export default {
-        components: {StarRating},
+        components: {Reactions},
         props: {sessionId: {type: String, required: true}},
+        data() {
+            return {feedback: [], author: '', rating: 0, comment: '', sent: false};
+        },
+        created() {
+            this.fetchFeedback();
+        },
         methods: {
             fetchFeedback() {
                 fetch(`/api/sessions/${this.sessionId}/feedback`)
                     .then(response => response.json())
-                    .then(data => this.feedback = data['hydra:member'])
+                    .then(data => this.feedback = data['hydra:member']);
             },
             onSubmit() {
                 const {sessionId, author, rating, comment} = this;
@@ -47,15 +54,8 @@
 
                         this.sent = true;
                         this.fetchFeedback();
-                    })
-                ;
+                    });
             }
-        },
-        data() {
-            return {feedback: [], author: '', rating: 0, comment: '', sent: false};
-        },
-        created() {
-            this.fetchFeedback();
         }
     }
 </script>
