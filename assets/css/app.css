@@ -169,6 +169,7 @@
 
 .animated {
     animation: up 2s ease-in-out;
+    pointer-events: none;
 }
 
 @keyframes up {
