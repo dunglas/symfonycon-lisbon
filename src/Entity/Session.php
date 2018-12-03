@@ -50,9 +50,16 @@ class Session
      */
     private $feedback;
 
+    /**
+     * @ApiSubresource()
+     * @ORM\OneToMany(targetEntity="App\Entity\Reaction", mappedBy="session", orphanRemoval=true)
+     */
+    private $reactions;
+
     public function __construct()
     {
         $this->feedback = new ArrayCollection();
+        $this->reactions = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -133,6 +140,37 @@ class Session
             // set the owning side to null (unless already changed)
             if ($feedback->getSession() === $this) {
                 $feedback->setSession(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Reaction[]
+     */
+    public function getReactions(): Collection
+    {
+        return $this->reactions;
+    }
+
+    public function addReaction(Reaction $reaction): self
+    {
+        if (!$this->reactions->contains($reaction)) {
+            $this->reactions[] = $reaction;
+            $reaction->setSession($this);
+        }
+
+        return $this;
+    }
+
+    public function removeReaction(Reaction $reaction): self
+    {
+        if ($this->reactions->contains($reaction)) {
+            $this->reactions->removeElement($reaction);
+            // set the owning side to null (unless already changed)
+            if ($reaction->getSession() === $this) {
+                $reaction->setSession(null);
             }
         }
 
