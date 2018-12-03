@@ -6,19 +6,19 @@
         <div class="level-item has-text-centered">
             <div class="reaction heart">
                 <a class="button icon is-medium" @click="addReaction('love')"><i id="love" class="far fa-grin-hearts fa-2x"></i></a>
-                <p>{{love}}</p>
+                <p>{{ love }}</p>
             </div>
         </div>
                 <div class="level-item has-text-centered">
             <div class="reaction star">
                 <a class="button icon is-medium" @click="addReaction('star')"><i id="star" class="far fa-grin-stars fa-2x"></i></a>
-                <p>{{star}}</p>
+                <p>{{ star }}</p>
             </div>
         </div>
                 <div class="level-item has-text-centered">
             <div class="reaction tear">
                 <a class="button icon is-medium" @click="addReaction('tear')"><i id="tear" class="far fa-grin-tears fa-2x"></i></a>
-                <p>{{tear}}</p>
+                <p>{{ tear }}</p>
             </div>
         </div>
     </div>

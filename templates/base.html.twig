@@ -9,14 +9,16 @@
     </head>
     <body>
         <header class="header-main">
-            <img class="logo" src="/assets/logotilleuls.png" />
+            <a href="https://les-tilleuls.coop">
+                <img class="logo" src="{{ asset('/assets/logotilleuls.png') }}" />
+            </a>
         </header>
         <div class="main">
             {% block body %}{% endblock %}
         </div>
         <footer class="footer has-background-dark has-text-light">
             <div class="content has-text-centered">
-            <p>Texte du footer</p>
+            <p><a href="https://github.com/dunglas/symfonycon-lisbon">Sources</a></p>
             </div>
         </footer>
         {{ encore_entry_script_tags('app') }}
