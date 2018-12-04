@@ -1,0 +1,39 @@
+name: demo-symfonycon
+
+type: php:7.2
+
+runtime:
+    extensions:
+        - apcu
+        - mbstring
+        - pdo_mysql
+
+build:
+    flavor: none
+
+relationships:
+  database: mysqldb:mysql
+
+web:
+    locations:
+        "/":
+            root: "public"
+            expires: 1h
+            passthru: "/index.php"
+
+disk: 2048
+
+mounts:
+    "/var": "shared:files/var"
+
+hooks:
+    build: |
+        set -x -e
+
+        curl -s https://get.symfony.com/cloud/configurator | (>&2 bash)
+        (>&2 symfony-build)
+
+    deploy: |
+        set -x -e
+
+        (>&2 symfony-deploy)
