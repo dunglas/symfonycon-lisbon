@@ -1,0 +1,212 @@
+@charset "utf-8";
+
+// Import a Google Font
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700");
+// Import Font Awesome
+@import "~@fortawesome/fontawesome-free/css/all.css";
+
+// Update Bulma's global variables
+$family-sans-serif: 'Open Sans', sans-serif;
+$primary: #e31f1b;
+$dark: #332b2c;
+$link: $primary;
+
+// Import only what you need from Bulma
+@import "~bulma/sass/utilities/_all.sass";
+@import "~bulma/sass/base/_all.sass";
+@import "~bulma/sass/elements/_all.sass";
+@import "~bulma/sass/components/_all.sass";
+@import "~bulma/sass/layout/_all.sass";
+@import "~bulma/sass/grid/_all.sass";
+
+.section {
+  padding: 1.5rem;
+}
+
+.header-main {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, .06), 0 10px 10px rgba(0, 0, 0, .06);
+  background-color: white;
+  position: fixed;
+  height: 75px;
+  width: 100%;
+  z-index: 50;
+}
+
+.header-main .logo {
+  width: 120px;
+  height: auto;
+  position: absolute;
+  left: 50%;
+}
+
+.main {
+  padding-top: 75px;
+}
+
+.title-wrapper {
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: relative;
+  overflow: hidden;
+}
+
+.title-wrapper:before {
+  content: "";
+  position: absolute;
+  width: 120%;
+  height: 200%;
+  transform: translate(-50%, -50%) rotate(-5deg);
+  background-image: url(/assets/symfonycon.png);
+  background-size: 140px;
+  background-position: center;
+  opacity: 0.5;
+  left: 50%;
+  top: 50%;
+
+}
+
+.title-wrapper:after {
+  content: "";
+  width: 100%;
+  height: 1px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
+  z-index: 1;
+  position: absolute;
+  top: 100%;
+  left: 0;
+}
+
+.title-wrapper .title-band {
+  z-index: 2;
+  text-align: right;
+}
+
+.title-wrapper .title {
+  background-color: white;
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 5px 5px 0 0;
+  color: #714393;
+  box-shadow: 0px -14px 28px 0px rgba(0, 0, 0, 0.1);
+}
+
+.session-item {
+  padding: 10px;
+}
+
+.session-item:last-child {
+  border-bottom: none;
+}
+
+.is-bordered {
+  border-bottom: 3px solid #594648;
+}
+
+.is-white {
+  color: white;
+}
+
+.calendar {
+  text-align: center;
+  padding: 10px;
+}
+
+.calendar .day-name {
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+.calendar .hour {
+  padding: 0 0 10px 0;
+}
+
+.reaction .icon {
+  border-radius: 50%;
+  margin: 5px;
+}
+
+.reaction .icon i {
+  color: white;
+}
+
+.reaction.hearts, .reaction.hearts i, .fa-grin-hearts {
+  color: $primary;
+}
+
+.reaction.stars, .reaction.stars i, .fa-grin-stars {
+  color: #ed8746;
+}
+
+.reaction.tears, .reaction.tears i, .fa-grin-tears {
+  color: #67d3bb;
+}
+
+.detail {
+  overflow: hidden;
+  padding: 10px;
+}
+
+.reactions-wrapper {
+  align-items: flex-end;
+  display: flex;
+  justify-content: center;
+}
+
+.reactions {
+  text-align: center;
+  transform: translateY(30px) rotate(-3deg);
+  position: relative;
+}
+
+.comments .media .icon {
+  background: #f5f5f5;
+  width: 70px;
+  height: 70px;
+}
+
+.comments-wrapper {
+  padding: 20px 0;
+}
+
+.comments .star-txt {
+  margin: 0 0 0 10px !important;
+}
+
+.comments form {
+  padding: 20px;
+}
+
+.comments form .vue-star-rating {
+  margin: 10px 0;
+}
+
+.comments form .media .icon {
+  background-color: #fff;
+}
+
+.animated {
+  animation: up 2s ease-in-out;
+  position: fixed;
+  bottom: 0;
+}
+
+@keyframes up {
+  0% {
+    opacity: 1;
+    top: 100%;
+  }
+  100% {
+    opacity: 0;
+    top: 0;
+    transform: scale(20) rotate(0deg);
+  }
+}
+
+.footer {
+  a:link, a:visited, a:hover, a:active {
+    color: $link
+  }
+}

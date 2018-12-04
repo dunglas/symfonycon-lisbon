@@ -7,7 +7,7 @@
     {% include 'session/title.html.twig' with {title: 'Detail'} %}
     <section class="section">
         <div class="container">
-                <a class="button is-small" href="{{ path('session_index') }}">
+            <a class="button is-small" href="{{ path('session_index') }}">
                 <span class="icon">
                     <i class="fas fa-chevron-left"></i>
                 </span>
@@ -26,7 +26,7 @@
                         <div class="column">
                             <h5 class="heading">{{ session.author }}</h5>
                             <h1 class="title is-3 primary">{{ session.title }}</h1>
-                            <p>{{ session.summary}}</p>
+                            <p>{{ session.summary }}</p>
                         </div>
                     </div>
                 </div>

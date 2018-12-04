@@ -3,41 +3,54 @@
     <div class="box reactions">
         <h3 class="title is-5">Live feedback</h3>
         <div class="level is-mobile">
-        <div class="level-item has-text-centered">
-            <div class="reaction heart">
-                <a class="button icon is-medium" @click="addReaction('love')"><i id="love" class="far fa-grin-hearts fa-2x"></i></a>
-                <p>{{ love }}</p>
+            <div class="level-item has-text-centered">
+                <div class="reaction hearts">
+                    <a class="button icon is-medium" @click="addReaction('hearts')">
+                        <i id="hearts" class="far fa-grin-hearts fa-2x"></i>
+                    </a>
+                    <p>{{ hearts }}</p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered">
+                <div class="reaction stars">
+                    <a class="button icon is-medium" @click="addReaction('stars')">
+                        <i id="stars" class="far fa-grin-stars fa-2x"></i>
+                    </a>
+                    <p>{{ stars }}</p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered">
+                <div class="reaction tears">
+                    <a class="button icon is-medium" @click="addReaction('tears')">
+                        <i id="tears" class="far fa-grin-tears fa-2x"></i>
+                    </a>
+                    <p>{{ tears }}</p>
+                </div>
             </div>
         </div>
-                <div class="level-item has-text-centered">
-            <div class="reaction star">
-                <a class="button icon is-medium" @click="addReaction('star')"><i id="star" class="far fa-grin-stars fa-2x"></i></a>
-                <p>{{ star }}</p>
-            </div>
-        </div>
-                <div class="level-item has-text-centered">
-            <div class="reaction tear">
-                <a class="button icon is-medium" @click="addReaction('tear')"><i id="tear" class="far fa-grin-tears fa-2x"></i></a>
-                <p>{{ tear }}</p>
-            </div>
-        </div>
-    </div>
     </div>
 </template>
 
 <script>
-    const colors = {
-        star: "#ed8746",
-        love: "#e31f1b",
-        tear: "#67d3bb"
-    };
-    const randomIntFromInterval = (min, max) => Math.floor(Math.random()*(max-min+1)+min);
+    import Vue from 'vue';
+    import ReceivedReaction from './ReceivedReaction';
+
     export default {
         props: {sessionId: {type: String, required: true}},
         data() {
-            return {star: 0, love: 0, tear: 0};
+            return {
+                stars: 0,
+                hearts: 0,
+                tears: 0,
+                reactions: []
+            };
         },
         created() {
+            const RR = Vue.extend(ReceivedReaction);
+            const vm = new RR();
+            vm.$mount();
+            document.body.appendChild(vm.$el);
+
             fetch(`/api/sessions/${this.sessionId}/reactions`)
                 .then(response =>
                     // Extract the hub URL from the Link header, http://localhost:3000
@@ -53,7 +66,7 @@
                     es.onmessage = ({data}) => {
                         const type = JSON.parse(data).type;
                         ++this[type];
-                        this.addReactionAnimation(type);
+                        vm.displayReceivedReaction(type);
                     }
                 })
         },
@@ -64,21 +77,10 @@
                     headers: {'Content-Type': 'application/ld+json'},
                     body: JSON.stringify({session: `/api/sessions/${this.sessionId}`, type})
                 })
-                    .then(({ok, statusText}) => {if (!ok) alert(statusText);});
-            },
-            addReactionAnimation(type) {
-                const base = document.getElementById(type);
-                const cln = base.cloneNode(true);
-                cln.style.position = 'fixed';
-                cln.style.color = colors[type];
-                const left = randomIntFromInterval(40, 60);
-                const rotate = randomIntFromInterval(-30, 30);
-                cln.style.transform = `rotate(${rotate}deg)`;
-                cln.style.left = left+"%";
-                cln.classList.add("animated");
-                document.body.appendChild(cln);
-                setTimeout(() => cln.remove(), 2000);
-            },
+                    .then(({ok, statusText}) => {
+                        if (!ok) alert(statusText);
+                    });
+            }
         }
     }
 </script>

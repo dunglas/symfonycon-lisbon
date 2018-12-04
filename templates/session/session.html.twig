@@ -1,15 +1,15 @@
 {# templates/session/session.html.twig #}
 <div class="columns">
-        <div class="column is-narrow">
-            <div class="message calendar">
-                <p class="day-name">{{ session.datetime|date('l') }}</p>
-                <p class="title is-4 hour">{{ session.datetime|date('H:m') }}</p>
-                <p class="subtitle is-6 day">{{ session.datetime|date('d M') }}</p>
-            </div>
+    <div class="column is-narrow">
+        <div class="message calendar">
+            <p class="day-name">{{ session.datetime|date('l') }}</p>
+            <p class="title is-4 hour">{{ session.datetime|date('H:m') }}</p>
+            <p class="subtitle is-6 day">{{ session.datetime|date('d M') }}</p>
         </div>
-        <div class="column">
-            <p class="heading">{{ session.author }}</p>
-            <p class="title is-5"><a href="{{ path('session_detail', {id: session.id}) }}">{{ session.title }}</a></p>
-        </div>
-        <div class="column">{{ session.summary }}</div>
     </div>
+    <div class="column">
+        <p class="heading">{{ session.author }}</p>
+        <p class="title is-5"><a href="{{ path('session_detail', {id: session.id}) }}">{{ session.title }}</a></p>
+    </div>
+    <div class="column">{{ session.summary }}</div>
+</div>

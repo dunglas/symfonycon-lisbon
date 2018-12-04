@@ -50,6 +50,7 @@ Encore
 
     .addEntry('js/feedback', './assets/feedback/index.js')
     .addEntry('js/reactions', './assets/reactions/index.js')
+    .enableSassLoader()
     .enableVueLoader()
 ;
 
