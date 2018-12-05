@@ -2,6 +2,10 @@ name: demo-symfonycon
 
 type: php:7.2
 
+dependencies:
+    nodejs:
+        yarn: "*"
+
 runtime:
     extensions:
         - apcu
@@ -32,6 +36,8 @@ hooks:
 
         curl -s https://get.symfony.com/cloud/configurator | (>&2 bash)
         (>&2 symfony-build)
+        (>&2 yarn install)
+        (>&2 yarn build)
 
     deploy: |
         set -x -e
