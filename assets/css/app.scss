@@ -209,4 +209,10 @@ $link: $primary;
   a:link, a:visited, a:hover, a:active {
     color: $link
   }
+
+  #symfonycloud {
+    width: 100px;
+    bottom: -3px;
+    position: relative;
+  }
 }
