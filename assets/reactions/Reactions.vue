@@ -4,24 +4,24 @@
         <h3 class="title is-5">Live feedback</h3>
         <div class="level is-mobile">
             <div class="level-item has-text-centered">
-                <div class="reaction hearts">
-                    <a class="button icon is-medium" @click="addReaction('hearts')">
+                <div class="reaction hearts" @click="addReaction('hearts')">
+                    <a class="button icon is-medium">
                         <i id="hearts" class="far fa-grin-hearts fa-2x"></i>
                     </a>
                     <p>{{ hearts }}</p>
                 </div>
             </div>
             <div class="level-item has-text-centered">
-                <div class="reaction stars">
-                    <a class="button icon is-medium" @click="addReaction('stars')">
+                <div class="reaction stars" @click="addReaction('stars')">
+                    <a class="button icon is-medium">
                         <i id="stars" class="far fa-grin-stars fa-2x"></i>
                     </a>
                     <p>{{ stars }}</p>
                 </div>
             </div>
             <div class="level-item has-text-centered">
-                <div class="reaction tears">
-                    <a class="button icon is-medium" @click="addReaction('tears')">
+                <div class="reaction tears" @click="addReaction('tears')">
+                    <a class="button icon is-medium">
                         <i id="tears" class="far fa-grin-tears fa-2x"></i>
                     </a>
                     <p>{{ tears }}</p>
