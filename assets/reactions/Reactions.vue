@@ -51,7 +51,8 @@
             vm.$mount();
             document.body.appendChild(vm.$el);
 
-            fetch(`/api/sessions/${this.sessionId}/reactions`)
+            const session = `/api/sessions/${this.sessionId}`;
+            fetch(`${session}/reactions`)
                 .then(response =>
                     // Extract the hub URL from the Link header, http://localhost:3000
                     response.json().then(data => ({
@@ -64,9 +65,11 @@
 
                     const es = new EventSource(`${hubUrl}?topic=${document.location.origin}/api/reactions/{id}`);
                     es.onmessage = ({data}) => {
-                        const type = JSON.parse(data).type;
-                        ++this[type];
-                        vm.displayReceivedReaction(type);
+                        const reaction = JSON.parse(data);
+                        if (reaction.session !== session) return;
+
+                        ++this[reaction.type];
+                        vm.displayReceivedReaction(reaction.type);
                     }
                 })
         },

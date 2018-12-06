@@ -51,7 +51,7 @@ class Session
     private $feedback;
 
     /**
-     * @ApiSubresource()
+     * @ApiSubresource
      * @ORM\OneToMany(targetEntity="App\Entity\Reaction", mappedBy="session", orphanRemoval=true)
      */
     private $reactions;
