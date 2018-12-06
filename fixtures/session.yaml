@@ -62,7 +62,7 @@ App\Entity\Session:
     session_12:
         title: 'Bulletproof MongoDB'
         author: 'Jeremy Mikola'
-        summary: 'An all-too-common approach for database error handling is to log the exception, return a 500 reasponse, and move on to the next request. MongoDB and its PHP driver have an array of features that can greatly improve an application''s resiliency in the face of unexpected errors. This talk will examine how the driver monitors connections to a cluster and look at how we can tune its behavior to meet an application''s unique needs. We''ll also demonstrate how PHP applications can take advantage of newer features such as retryable writes and multi-document transactions to guarantee ACID data integrity without having to fall back to PDO and an SQL database.'
+        summary: 'An all-too-common approach for database error handling is to log the exception, return a 500 response, and move on to the next request. MongoDB and its PHP driver have an array of features that can greatly improve an application''s resiliency in the face of unexpected errors. This talk will examine how the driver monitors connections to a cluster and look at how we can tune its behavior to meet an application''s unique needs. We''ll also demonstrate how PHP applications can take advantage of newer features such as retryable writes and multi-document transactions to guarantee ACID data integrity without having to fall back to PDO and an SQL database.'
         datetime: '<(new DateTime("2018-12-06 14:20"))>'
     session_13:
         title: 'Leverage the power of Symfony components within ApiPlatform'
@@ -102,7 +102,7 @@ App\Entity\Session:
     session_20:
         title: 'My first year with event sourcing (in Symfony)'
         author: 'Tim Huijzers'
-        summary: 'Over the last couple of years, I have heard of Event sourcing but didn''t really know where to start until I did a tutorial at DPC ''17. After having some basic information it was time to start a Hackathon and after that something production worty. In this talk I will try to give the best information to get started and to know some of the problems you can face if you begin event-sourcing.'
+        summary: 'Over the last couple of years, I have heard of Event sourcing but didn''t really know where to start until I did a tutorial at DPC ''17. After having some basic information it was time to start a Hackathon and after that something production worthy. In this talk I will try to give the best information to get started and to know some of the problems you can face if you begin event-sourcing.'
         datetime: '<(new DateTime("2018-12-07 11:00"))>'
     session_21:
         title: 'Symfony 4 internals'
