@@ -161,6 +161,10 @@ $link: $primary;
   position: relative;
 }
 
+.comments .media-content {
+  overflow: hidden;
+}
+
 .comments .media .icon {
   background: #f5f5f5;
   width: 70px;

@@ -14,74 +14,44 @@ App\Entity\Session:
     title: Keynote
     author: Fabien Potencier
     summary: Keynote
-    datetime: '<(new DateTime("28-03-2019 09:15"))>'
+    datetime: '<(new DateTime("27-04-2019 09:15"))>'
   session_1:
-    title: Démystifier React et Redux avec Symfony et Webpack Encore
-    author: Titouan Galopin
-    summary: Le monde de Javascript est vaste et intéressant ... mais aussi un peu effrayant ! C'est un monde très dynamique dans lequel de nouvelles technologies apparaissent tous les jours, rendant d'autant plus difficile la veille et la compréhension de l'écosystème.
-    datetime: '<(new DateTime("28-03-2019 10:00"))>'
+    title: Comment faire le bon choix entre GraphQL et REST ? Pourquoi pas gRPC ?
+    author: Barhoumi Ramzi
+    summary: 'La présentation comportera les sujets suivants:'
+    datetime: '<(new DateTime("27-04-2019 10:00"))>'
   session_2:
-    title: Des apps Symfony sous stéroïdes grâce à Vue.js, Mercure et Panther !
+    title: Le TDD dans la vraie vie avec Panther
+    author: Adrien Lucas
+    summary: Panther est un tout nouveau composant Symfony dont l'objectif est de vous simplifier l'écriture des tests d'intégrations et des tests end-to-end !
+    datetime: '<(new DateTime("27-04-2019 11:10"))>'
+  session_3:
+    title: ERP Gestion de transport
+    author: ameni kooli
+    summary: Présentation d'un projet de réalisation d'un ERP pour le compte du client Log-Xpress, spécialiste dans la logistique et transport aérien et maritime sur la base du framework Symfony.
+    datetime: '<(new DateTime("27-04-2019 11:55"))>'
+  session_4:
+    title: 'CAS REEL: Réalisation d''un POC et son Industrialisation avec Symfony'
+    author: Selim Masrouki
+    summary: "Mise en place d'une stratégie BIM (Building Information Modeling), ou bien, le traitement de la maquette numérique. Ce processus concerne l’acquisition, la collecte et le traitement de données sous forme de maquette numérique décrivant l’environnement existant d’un projet, sa conception et son exécution."
+    datetime: '<(new DateTime("27-04-2019 14:00"))>'
+  session_5:
+    title: Symfony HttpClient, quoi d'autre?
+    author: Nicolas Grekas
+    summary: Avez-vous entendu parler de Symfony HttpClient ? Ce nouveau composant sera publié fin mai avec Symfony 4.3. Que diriez-vous de l'expérimenter en lançant "composer require symfony/http-client" ? C'est ce que je vous propose de faire lors de cette conférence. Nous passerons en revue ses fonctionnalités et ses caractéristiques essentielles. Suffisant pour remplacer Guzzle et consorts ? À n'en pas douter en ce qui me concerne :)
+    datetime: '<(new DateTime("27-04-2019 14:45"))>'
+  session_6:
+    title: Exploiter le composant ExpressionLanguage pour générer des exports à la volée
+    author: Mehdi Chibouni
+    summary: Exporter des données est une tâche qui est souvent recurrente. Dans ce talk, nous allons exploiter le composant Symfony ExpressionLanguage pour créer dynamiquement des requêtes Doctrine. Nous allons également profiter de cette occasion pour montrer comment on peut facilement créer un système de plugins avec Symfony
+    datetime: '<(new DateTime("27-04-2019 15:55"))>'
+  session_7:
+    title: Plongée dans l'injection de dépendances de Symfony
+    author: Titouan Galopin
+    summary: L'injection de dépendances est probablement l'élément le plus important dans l'architecture d'une application Symfony. En fournissant un moyen souple et efficace de construire des architectures suivant les principes SOLID, ce modèle de conception constitue un environnement idéal pour vos projets.
+    datetime: '<(new DateTime("27-04-2019 16:40"))>'
+  session_8:
+    title: Des apps Symfony sous stéroïdes !
     author: Kévin Dunglas
     summary: Grâce aux nouvelles capacités de la plateforme web (web components, progressive web apps...) et à la montée en puissance des bibliothèques et frameworks JS tels que Vue, React et Angular, quasiment toutes les nouvelles apps Symfony doivent aussi tirer partie de l'écosystème frontend. Symfony 4 contient de nombreux outils rendant très facile d'intégrer les outils JS moderne dans le framework.
-    datetime: '<(new DateTime("28-03-2019 11:10"))>'
-  session_3:
-    title: État de l'art d'Elasticsearch avec Symfony
-    author: Damien Alexandre
-    summary: Tout le monde utilise Elasticsearch, mais qui en comprend vraiment les particularités ? Dans ce talk je vous expose mes recommandations sur la mise en place du moteur de recherche dans un applicatif Web et les pièges dans lesquels nous tombons le plus souvent. Du tuning de pertinence à la mise à jour de mapping en production sans perte de service, vous apprendrez à maîtriser et reprendre confiance dans votre utilisation d'Elastic avec Symfony.
-    datetime: '<(new DateTime("28-03-2019 11:55"))>'
-  session_4:
-    title: "HTTP/3: C'est une question de transport !"
-    author: Benoit Jacquemont
-    summary: "L'annonce de HTTP/3 au début de novembre 2018 en a surpris plus d'un: moins de 4 ans la sépare de HTTP/2, alors que 8 s'était écoulé entre HTTP/1.1 et HTTP/2."
-    datetime: '<(new DateTime("28-03-2019 14:30"))>'
-  session_5:
-    title: Des images au cordeau pour vos applications Symfony
-    author: Mathieu Santostefano
-    summary: Le responsive est une pratique largement répandue dans nos projets depuis quelques années maintenant. De nombreuses techniques CSS permettent d'adapter les layouts de nos sites web à différentes tailles de terminaux. Mais lorsqu'il s'agit d'adapter les images, les techniques sont souvent moins connues, et parfois perçues comme expérimentales. Nous listerons ensemble quels sont les standards actuels permettant de charger la bonne image à la bonne taille et au bon format pour le bon terminal. Puis, nous verrons comment implémenter ces standards au sein d'une application Symfony, quels outils utiliser et comment tirer parti de Twig pour nous faciliter le travail !
-    datetime: '<(new DateTime("28-03-2019 15:15"))>'
-  session_6:
-    title: Du développement à la production, une architecture grandissante
-    author: Kevin dejour
-    summary: "\"Sur mon poste ça fonctionne bien pourtant !\" Tout le monde est confronté à ce problème. Comment passer d'une architecture simple d'un poste de développeur à une infrastructure multi-datacenter pour de la haute disponibilité ? Comment arriver à définir l'architecture ? Quelles sont les différentes étapes de la mise en place de l'architecture jusqu'à la configuration de Symfony ? Lors de cette conférence, nous verrons la mise en place et l’utilisation des mécanismes de caches (HTTP et Persitant) d’une simple installation mono serveur à une architecture sur 3 data centers."
-    datetime: '<(new DateTime("28-03-2019 16:25"))>'
-  session_7:
-    title: Les meilleurs bundles et outils pour vos applications Symfony
-    author: Danielle KAYUMBI BONKOTO
-    summary: Il existe un large choix de bundles et d'outils permettant de d'implémenter rapidement un besoin fonctionnel ou technique. Cependant, certains bundles sont plus souples, plus rapides et plus simples à prendre en main, ce qui permet de gagner en temps dans le développement d'une feature. Tout au long de mon expérience, j'ai eu l'occasion de travailler sur des projets de natures différentes, et de recenser les besoins les plus fréquents dans une application en Symfony suivant différents points:
-    datetime: '<(new DateTime("28-03-2019 17:10"))>'
-  session_8:
-    title: Open source, renouveau de l'Humanisme
-    author: Jérôme Vieilledent
-    summary: Dans beaucoup (trop) de domaines, le monde du travail apparaît comme une usine géante dans laquelle chacun se retrouve dans l'obligation de se rendre, dans le but de gagner sa pitance. Cela doit-il pour autant demeurer une fatalité ? Le secteur du numérique dans lequel nous évoluons, et plus particulièrement l'Open Source, de part son aspect florissant, voire luxuriant, nous offre l'opportunité de démontrer qu'un autre modèle est possible, modèle que l'on retrouve bien souvent dans les communautés open source. Bienveillance, inclusion, partage, confiance, faisons en sorte que ces valeurs ne restent pas de vains mots !
-    datetime: '<(new DateTime("29-03-2019 09:00"))>'
-  session_9:
-    title: Doctrine en dehors des sentiers battus
-    author: Romaric Drigon
-    summary: L'ORM Doctrine offre beaucoup plus de flexibilité qu'il n'y paraît. Dans cette présentation, nous allons nous intéresser à son fonctionnement interne et à ses fonctionnalités moins connues, pour découvrir comment mieux l'utiliser. Au programme, évènements et listeners, filtres, tracking policy, mais aussi des astuces sur des architectures possibles pour son code... Ne soyez pas effrayés, et attachez vos ceintures!
-    datetime: '<(new DateTime("29-03-2019 09:45"))>'
-  session_10:
-    title: Leçon N° 139, API Platform ce n'est bon qu'à faire un POC, FAUX !
-    author: Grégoire Hébert
-    summary: La première chose qui est mise en avant avec API Platform c'est la capacité de faire du développement rapide d'application. C'est vrai. Ça ne signifie pas pour autant qu'il est impossible de réaliser une application complexe avec une séparation de la couche métier, de l'api publique. Voyons ensemble les mécanismes avancés d'API Platform et les outils qui en feront votre framework API en PHP.
-    datetime: '<(new DateTime("29-03-2019 10:55"))>'
-  session_11:
-    title: Symfony HttpClient, what else?
-    author: Nicolas Grekas
-    summary: Avez-vous entendu parler de Symfony HttpClient ? Ce nouveau composant sera publié fin mai avec Symfony 4.3. Que diriez-vous de l'expérimenter en lançant "composer require symfony/http-client dev-master" ? C'est ce que je vous propose de faire lors de cette conférence. Nous passerons en revue ses fonctionnalités et ses caractéristiques essentielles. Suffisant pour remplacer Guzzle et consorts ? À n'en pas douter en ce qui me concerne :)
-    datetime: '<(new DateTime("29-03-2019 11:40"))>'
-  session_12:
-    title: Voyage au coeur de React-admin, l'admin generator d'API Platform
-    author: François Zaninotto
-    summary: API Platform fournit en standard un admin generator très sophistiqué, mais assez déroutant pour les développeurs PHP, puisqu'il est en JavaScript. Au cours de cette session, prenez le risque de passer du côté obscur et découvrez les secrets de react-admin. A travers des exemples concrets, des astuces pratiques, et une visite guidée de l'architecture, vous en saurez assez pour construire des interfaces d'administration... au goût du jour.
-    datetime: '<(new DateTime("29-03-2019 14:15"))>'
-  session_13:
-    title: RabbitMQ simplement
-    author: Frédéric Bouchery
-    summary: "RabbitMQ, vous en avez certainement entendu parler, mais franchement, ces histoires d'exchange, de queue, de binding, de topic, de fanout, ce n'est pas toujours très clair. Et de toutes façons, vous ne pensez pas trop en avoir besoin ! Pourtant, c'est un excellent outil, et qui ouvre le champs des possibles, bien au delà de votre imagination. Lors de cette conférence, très didactique, vous découvrirez les bases de RabbitMQ et une sélection d'usages pragmatiques et directement utilisables dans vos projets de tous les jours. Bref, pas de bullshit : vous allez enfin comprendre comment utiliser RabbitMQ en PHP et votre monde va s'éclairer, promesse tenue !"
-    datetime: '<(new DateTime("29-03-2019 15:00"))>'
-  session_14:
-    title: Développement d'applications TDD avec Symfony et ses amis en situation réelle
-    author: Chris Holland
-    summary: Démarrer Symfony avec REST, OAuth, gestion des utilisateurs, tests d'acceptation et tests unitaires. Mise en place de Doctrine avec PHPUnit, pour permettre un workflow TDD hautement productif.
-    datetime: '<(new DateTime("29-03-2019 16:10"))>'
+    datetime: '<(new DateTime("27-04-2019 17:05"))>'
